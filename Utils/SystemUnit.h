@@ -9,7 +9,37 @@
 #ifndef Unit_SystemUnit_h
 #define Unit_SystemUnit_h
 
-/*****************************************  获取设备的一些信息 *************************************/
+
+/**
+ *  常用字体
+ */
+
+#define kFONT_SIZE_24 [UIFont systemFontOfSize:24]
+
+#define kFONT_SIZE_18 [UIFont systemFontOfSize:18]
+
+#define kFONT_SIZE_15 [UIFont systemFontOfSize:15]
+
+#define kFONT_SIZE_13 [UIFont systemFontOfSize:13]
+
+#define kFONT_SIZE_12 [UIFont systemFontOfSize:12]
+
+#define kFONT_SIZE_10 [UIFont systemFontOfSize:10]
+
+#define kFONT_SIZE_24_BOLD [UIFont boldSystemFontOfSize:24]
+
+#define kFONT_SIZE_18_BOLD [UIFont boldSystemFontOfSize:18]
+
+#define kFONT_SIZE_15_BOLD [UIFont boldSystemFontOfSize:15]
+
+#define kFONT_SIZE_12_BOLD [UIFont boldSystemFontOfSize:12]
+
+#define kFONT_SIZE_10_BOLD [UIFont boldSystemFontOfSize:10]
+
+
+/**
+ *  设备信息
+ */
 
 //设备是否是iPhone4
 #define DEVICE_IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height - 480) ? NO : YES)
