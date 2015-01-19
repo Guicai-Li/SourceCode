@@ -63,4 +63,26 @@
 //设备版本号
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
+
+/**
+ *  iOS获取ISO Country Code
+ */
+
+
+NSString *(^CountryNameByISO)(NSString *) = ^(NSString *iso) {
+    NSLocale *locale = [NSLocale currentLocale];
+    return [locale displayNameForKey:NSLocaleCountryCode value:iso];
+};
+
+NSString *(^ISOCountryCodeByCarrier)() = ^() {
+    CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
+    CTCarrier *carrier = [networkInfo subscriberCellularProvider];
+    return [carrier isoCountryCode];
+};
+
+// 获取Device本地设置的地区
+#define SIMISO                  ISOCountryCodeByCarrier()
+// 获取本地设置的语言
+#define CountryNameFromISO(iso) CountryNameByISO(iso)
+
 #endif
