@@ -69,5 +69,13 @@
 
 - (UIImage *)imageCompressForWidth:(CGFloat)defineWidth;
 
+/**
+ *  屏幕截屏
+ *
+ *  @param view 当前界面
+ *
+ *  @return 图片
+ */
++ (UIImage *)captureImageFromView: (UIView *)view;
 
 @end

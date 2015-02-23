@@ -262,6 +262,16 @@ CGImageRef CopyImageAndAddAlphaChannel(CGImageRef sourceImage);
     return scaledImage;
 }
 
++ (UIImage *)captureImageFromView: (UIView *)view {
+    CGRect screenRect = [view bounds];
+    UIGraphicsBeginImageContext(screenRect.size);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    [view.layer renderInContext:ctx];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 @end
 
 CGImageRef CopyImageAndAddAlphaChannel(CGImageRef sourceImage) {
