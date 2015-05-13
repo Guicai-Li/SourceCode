@@ -8,6 +8,7 @@
 
 #ifndef Unit_SystemUnit_h
 #define Unit_SystemUnit_h
+#import "SDiPhoneVersion.h"
 
 #define DEBUG 1
 
@@ -71,16 +72,16 @@
  */
 
 //设备是否是iPhone4
-#define DEVICE_IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height - 480) ? NO : YES)
+#define DEVICE_IS_IPHONE4 [SDiPhoneVersion deviceVersion] == iPhone4
 
 //设备是否是iPhone5
-#define DEVICE_IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height - 568) ? NO : YES)
+#define DEVICE_IS_IPHONE5 [SDiPhoneVersion deviceVersion] == iPhone5
 
 //设备是否iPhone6
-#define DEVICE_IS_IPHONE6 (([[UIScreen mainScreen] bounds].size.height - 667) ? NO : YES)
+#define DEVICE_IS_IPHONE6 [SDiPhoneVersion deviceVersion] == iPhone6
 
 //设备是否iPhone6plus
-#define DEVICE_IS_IPHONE6_PLUS (([[UIScreen mainScreen] bounds].size.height - 736) ? NO : YES)
+#define DEVICE_IS_IPHONE6_PLUS [SDiPhoneVersion deviceVersion] == iPhone6Plus
 
 //设备屏幕宽度
 #define DEVICE_SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
