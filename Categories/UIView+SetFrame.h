@@ -18,4 +18,8 @@
 
 - (void)setOriginY:(CGFloat)y;
 
+- (void)setSize:(CGSize)size;
+
+- (void)setOrigin:(CGPoint)origin;
+
 @end

@@ -34,4 +34,16 @@
     self.frame     = frame;
 }
 
+- (void)setSize:(CGSize)size {
+    CGRect frame = self.frame;
+    frame.size   = size;
+    self.frame   = frame;
+}
+
+- (void)setOrigin:(CGPoint)origin {
+    CGRect frame = self.frame;
+    frame.origin = origin;
+    self.frame   = frame;
+}
+
 @end
