@@ -11,7 +11,13 @@
 
 @interface FileManagerUtils : NSObject
 
-+ (FileManagerUtils *)shared;
+
+/**
+ *  创建一个单例
+ *
+ *  @return 返回 FileManagerUtils 单例
+ */
++ (instancetype)sharedInstance;
 
 #pragma mark - 文件操作
 /**

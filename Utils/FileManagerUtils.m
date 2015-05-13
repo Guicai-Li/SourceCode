@@ -10,7 +10,12 @@
 
 @implementation FileManagerUtils
 
-+ (FileManagerUtils *)shared {
+/**
+ *  创建一个单例
+ *
+ *  @return 返回 FileManagerUtils 单例
+ */
++ (instancetype)sharedInstance {
     static FileManagerUtils *singleton = nil;
     static dispatch_once_t pred;
     dispatch_once(&pred, ^{
