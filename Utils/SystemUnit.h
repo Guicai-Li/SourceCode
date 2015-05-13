@@ -9,6 +9,29 @@
 #ifndef Unit_SystemUnit_h
 #define Unit_SystemUnit_h
 
+#define DEBUG 1
+
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((fmt), ##__VA_ARGS__);
+#else
+#define DLog(...)
+#endif
+
+
+/**
+ *  接口
+ */
+
+
+/**
+ *  一些常用通知定义
+ */
+
+
+/**
+ *  一些常用字符串定义
+ */
+
 
 /**
  *  常用字体
@@ -36,6 +59,12 @@
 
 #define kFONT_SIZE_10_BOLD [UIFont boldSystemFontOfSize:10]
 
+/**
+ *  常见颜色
+ */
+
+
+
 
 /**
  *  设备信息
@@ -59,30 +88,15 @@
 //设备屏幕高度
 #define DEVICE_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 
-
 //设备版本号
 #define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
 
 /**
- *  iOS获取ISO Country Code
+ *  AppStore
  */
+#define APP_STORE_URL_7_UNDER @""
 
-
-NSString *(^CountryNameByISO)(NSString *) = ^(NSString *iso) {
-    NSLocale *locale = [NSLocale currentLocale];
-    return [locale displayNameForKey:NSLocaleCountryCode value:iso];
-};
-
-NSString *(^ISOCountryCodeByCarrier)() = ^() {
-    CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
-    CTCarrier *carrier = [networkInfo subscriberCellularProvider];
-    return [carrier isoCountryCode];
-};
-
-// 获取Device本地设置的地区
-#define SIMISO                  ISOCountryCodeByCarrier()
-// 获取本地设置的语言
-#define CountryNameFromISO(iso) CountryNameByISO(iso)
+#define APP_STORE_URL_7_SUPPER @""
 
 #endif
