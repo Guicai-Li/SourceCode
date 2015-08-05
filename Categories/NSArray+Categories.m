@@ -10,6 +10,15 @@
 
 @implementation NSArray (Categories)
 
++ (BOOL)isEmpty:(NSArray *)array{
+    if(array == nil || array.count == 0)
+        return YES;
+    return NO;
+}
+@end
+
+@implementation NSArray (Safe)
+
 - (id)safeObjectAtIndex:(NSInteger)index {
     if ( index < 0 )
         return nil;

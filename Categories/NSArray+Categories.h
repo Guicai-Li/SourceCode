@@ -11,6 +11,17 @@
 
 typedef NSComparisonResult	(^NSMutableArrayCompareBlock)( id left, id right );
 
+@interface NSArray (Categories)
+
+/**
+ *  非空校验（nil或者元素个数为0）
+ *
+ *  @return 是否为空
+ */
++(BOOL)isEmpty:(NSArray *)array;
+
+@end
+
 @interface NSArray (Safe)
 
 - (id)safeObjectAtIndex:(NSInteger)index;
