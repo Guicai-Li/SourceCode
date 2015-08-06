@@ -10,6 +10,9 @@
 
 @implementation AppStoreUtils
 
+/*
+ *  跳转到App Store评分或者升级
+ */
 + (void)gotoAppStore{
     NSString *url;
     if (SYSTEM_VERSION < 7) {
@@ -20,5 +23,15 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
+/*
+ *  当前程序的版本号
+ */
+-(NSString *)version{
+    
+    //系统直接读取的版本号
+    NSString *versionValueStringForSystemNow=[[NSBundle mainBundle].infoDictionary valueForKey:(NSString *)kCFBundleVersionKey];
+    
+    return versionValueStringForSystemNow;
+}
 
 @end

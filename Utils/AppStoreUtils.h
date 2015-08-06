@@ -15,4 +15,11 @@
  */
 + (void)gotoAppStore;
 
+/*
+ *  当前程序的版本号
+ */
+@property (nonatomic,copy,readonly) NSString *version;
+
+
 @end
+
